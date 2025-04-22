@@ -12,6 +12,24 @@ const checkBrowser = () => {
 		version: null
 	};
 
+	if (agent.includes("windows")) {
+		data.os = "windows";
+	} else if (agent.includes("mac") && agent.includes("os")) {
+		if (agent.includes("iphone") || agent.includes("ipad") || agent.includes("ipod")) {
+			data.os = "ios";
+		} else {
+			data.os = "mac";
+		}
+	} else if (agent.includes("android")) {
+		data.os = "android";
+	} else if (agent.includes("linux") || agent.includes("sunos") || agent.includes("bsd")) {
+		data.os = "linux";
+	} else if (agent.includes("nintendo")) {
+		data.os = "nintendo";
+	} else if (agent.includes("playstation")) {
+		data.os = "playstation";
+	}
+
 	if (agent.includes("msie") || agent.includes("trident")) {
 		data.browser = "ie";
 		data.type = "ie";
@@ -39,10 +57,17 @@ const checkBrowser = () => {
 		if (match !== null) {
 			data.version = Number(match[1]);
 		}
-	} else if (agent.includes("samsungbrowser")) {
+	} else if (agent.includes("samsungbrowser") && data.os === "android") {
 		data.browser = "samsung";
 		data.type = "chromium";
 		const match = agent.match(/samsungbrowser\/([0-9]+\.[0-9]+)/);
+		if (match !== null) {
+			data.version = Number(match[1]);
+		}
+	} else if (agent.includes("line") && data.os === "android") {
+		data.browser = "line";
+		data.type = "chromium";
+		const match = agent.match(/line\/([0-9]+\.[0-9]+)/);
 		if (match !== null) {
 			data.version = Number(match[1]);
 		}
@@ -68,24 +93,6 @@ const checkBrowser = () => {
 		if (match !== null) {
 			data.version = Number(match[1]);
 		}
-	}
-
-	if (agent.includes("windows")) {
-		data.os = "windows";
-	} else if (agent.includes("mac") && agent.includes("os")) {
-		if (agent.includes("iphone") || agent.includes("ipad") || agent.includes("ipod")) {
-			data.os = "ios";
-		} else {
-			data.os = "mac";
-		}
-	} else if (agent.includes("android")) {
-		data.os = "android";
-	} else if (agent.includes("linux") || agent.includes("sunos") || agent.includes("bsd")) {
-		data.os = "linux";
-	} else if (agent.includes("nintendo")) {
-		data.os = "nintendo";
-	} else if (agent.includes("playstation")) {
-		data.os = "playstation";
 	}
 
 	return data;
