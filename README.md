@@ -10,6 +10,20 @@ npm install @akimeaki/check-browser
 import checkBrowser from "@akimeaki/check-browser";
 ```
 
+# npm公開
+
+ログイン
+
+```shell
+npm login
+```
+
+公開
+
+```shell
+npm publish --access=public
+```
+
 # License
 
 Released under the [MIT license](https://opensource.org/license/mit)
