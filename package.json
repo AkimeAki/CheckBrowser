@@ -1,6 +1,6 @@
 {
 	"name": "@akimeaki/check-browser",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"type": "module",
 	"main": "./modules/check-browser.js",
 	"types": "./modules/check-browser.d.ts",
@@ -16,7 +16,8 @@
 		"build": "rm -rf ./modules/* && tsc",
 		"format": "prettier --write './**/*'",
 		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint .",
-		"lint:fix": "npm run lint -- --fix && npm run format"
+		"lint:fix": "npm run lint -- --fix && npm run format",
+		"publish": "npm run build && npm publish --access=public"
 	},
 	"devDependencies": {
 		"@eslint/js": "9.15.0",
