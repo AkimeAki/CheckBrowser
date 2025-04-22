@@ -12,6 +12,12 @@ import checkBrowser from "@akimeaki/check-browser";
 
 # npm公開
 
+ビルド
+
+```shell
+npm run build
+```
+
 ログイン
 
 ```shell
