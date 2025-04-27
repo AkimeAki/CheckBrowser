@@ -17,7 +17,7 @@
 		"format": "prettier --write './**/*'",
 		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint .",
 		"lint:fix": "npm run lint -- --fix && npm run format",
-		"publish": "npm run build && npm publish --access=public"
+		"publish": "npm run build && npm login && npm publish --access=public"
 	},
 	"devDependencies": {
 		"@eslint/js": "9.15.0",
