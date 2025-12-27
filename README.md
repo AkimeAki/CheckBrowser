@@ -40,7 +40,7 @@ resultの中身
 
 `browser`: ブラウザ名
 
-`renderingType`: CSS のレンダリング挙動が同一かどうかを基準にした分類です。
+`renderingType`: CSS のレンダリング挙動が同一かどうかを基準にした分類
 
 `os`: 使用しているOS名
 

@@ -1,6 +1,6 @@
 {
 	"name": "@akimeaki/check-browser",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"type": "module",
 	"main": "./modules/check-browser.js",
 	"types": "./modules/check-browser.d.ts",
